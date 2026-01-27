@@ -12,7 +12,7 @@ export const authenticateUser = async (req, res, id, FullName, Email) => { //Aut
         id, FullName, Email, SessionID: session._id
     })
 
-    const baseConfig = { httpOnly: true, secure: false, }
+    const baseConfig = { httpOnly: true, secure: true,sameSite:"None" }
     //Create Refresh Token
     const refreshToken = await createRefreshToken(session._id)
     //set Access Token in cookie as a respone
