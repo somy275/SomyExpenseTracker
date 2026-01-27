@@ -1,0 +1,22 @@
+{
+  "name": "expense_tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd frontend && cd expense_tracker && npm run dev",
+    "server": "cd backend && nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "concurrently": "^9.2.0",
+    "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,0 +1,162 @@
+<mjml>
+  <mj-head>
+    <mj-title>Verify Your Email Address</mj-title>
+    <mj-preview>Please verify your email address to complete your account setup</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" />
+      <mj-text font-size="16px" color="#333333" line-height="24px" />
+      <mj-section background-color="#ffffff" />
+    </mj-attributes>
+    <mj-style inline="inline">
+      .link-nostyle { color: inherit; text-decoration: none }
+      .footer-link { color: #888888 !important; text-decoration: underline }
+      .verification-code { font-family: 'Courier New', monospace; letter-spacing: 2px; font-size: 18px; font-weight: bold; }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f8fafc">
+    
+    <!-- Header -->
+    <mj-section background-color="#ffffff" padding="40px 20px 30px">
+      <mj-column>
+        <!-- Logo/Icon Container -->
+        <mj-table align="center" width="80px">
+          <tr>
+            <td style="width: 70px; height: 70px; background-image: linear-gradient(135deg, #2563eb 0%, #9333ea 100%); border-radius: 16px; text-align: center; vertical-align: middle;">
+              <span style="color: #ffffff; font-size: 32px; line-height: 80px;">✓</span>
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section background-color="#ffffff" padding="0px 20px 40px">
+      <mj-column>
+        
+        <!-- Title -->
+        <mj-text align="center" font-size="32px" font-weight="700" color="#1f2937" padding="0 0 20px">
+          Verify Your Email
+        </mj-text>
+        
+        <!-- Subtitle -->
+        <mj-text align="center" font-size="18px" color="#6b7280" padding="0 0 30px">
+          You're almost ready to get started!
+        </mj-text>
+        
+        <!-- Greeting -->
+        <mj-text font-size="18px" color="#374151" padding="0 0 20px">
+          Hi <%=data.name%>,
+        </mj-text>
+        
+        <!-- Main Message -->
+        <mj-text padding="0 0 25px">
+          Thanks for signing up for Expense Tracker! To complete your account setup and start using our services, please verify that <strong><%=data.email%></strong> is your email address.
+        </mj-text>
+        
+        <!-- Verification Button -->
+        <mj-button 
+          background-color="#2563eb" 
+          color="#ffffff" 
+          font-size="18px" 
+          font-weight="600" 
+          href="<%=data.link%>" 
+          padding="30px 0"
+          border-radius="12px"
+          inner-padding="16px 40px"
+        >
+          Verify Email Address
+        </mj-button>
+        
+        <!-- Alternative Method -->
+        <mj-divider border-color="#e5e7eb" border-width="1px" padding="30px 0 25px" />
+        
+        <mj-text align="center" font-size="16px" color="#374151" padding="0 0 20px">
+          <strong>Alternative: Use Verification Code</strong>
+        </mj-text>
+        
+        <mj-text align="center" font-size="14px" color="#6b7280" padding="0 0 15px">
+          If the button doesn't work, enter this verification code on our website:
+        </mj-text>
+        
+        <!-- Verification Code Box -->
+        <mj-section background-color="#f1f5f9" border-radius="8px" padding="20px">
+          <mj-column>
+            <mj-text align="center" font-size="24px" color="#1e293b" font-weight="bold" padding="0" css-class="verification-code">
+              <%=data.token%>
+            </mj-text>
+          </mj-column>
+        </mj-section>
+        
+        <!-- Manual Link -->
+        <mj-text font-size="14px" color="#6b7280" align="center" padding="25px 0 0">
+          Or copy and paste this link into your browser:
+        </mj-text>
+        
+        <mj-text font-size="14px" color="#9333ea" align="center" padding="10px 0 30px">
+          <a href="<%=data.link%>" target="_self" style="color: #9333ea; text-decoration: underline; word-break: break-all;"><%=data.link%></a>
+        </mj-text>
+        
+        <!-- Important Notice -->
+        <mj-section background-color="#fef2f2" border-left="4px solid #ef4444" padding="20px">
+          <mj-column>
+            <mj-text font-size="14px" color="#dc2626" padding="0">
+              <strong>⚠️ Important:</strong> This verification link will expire in <strong>48 hours</strong>. If you don't verify your email within this time, you'll need to request a new verification email.
+            </mj-text>
+          </mj-column>
+        </mj-section>
+        
+        <!-- Benefits Section -->
+        <mj-text font-size="18px" color="#374151" font-weight="600" padding="40px 0 20px">
+          What happens after verification?
+        </mj-text>
+        
+        
+        <!-- Didn't Sign Up Notice -->
+        <mj-section background-color="#fffbeb" border="1px solid #fbbf24" border-radius="8px" padding="20px">
+          <mj-column>
+            <mj-text font-size="14px" color="#92400e" padding="0">
+              <strong>Didn't create an account?</strong><br/>
+              If you received this email by mistake, you can safely ignore it. The account will remain unverified and inactive.
+            </mj-text>
+          </mj-column>
+        </mj-section>
+        
+        <!-- Support -->
+        <mj-text font-size="14px" color="#6b7280" align="center" padding="30px 0 0">
+          Having trouble? We're here to help!<br/>
+          Contact us at <a href="mailto:somyranjank@gmail.com" style="color: #9333ea; text-decoration: underline;">somyranjank@gmail.com</a>
+        </mj-text>
+        
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#f9fafb" padding="40px 20px">
+      <mj-column>
+        <mj-text align="center" font-size="14px" color="#6b7280" padding="0 0 15px">
+          Welcome to Expense Tracker!<br/>
+          <strong>We're excited to have you on board.</strong>
+        </mj-text>
+        
+        <mj-divider border-color="#e5e7eb" border-width="1px" padding="20px 0" />
+        
+        <mj-text align="center" font-size="12px" color="#9ca3af" line-height="18px" padding="0 0 15px">
+          This verification email was sent to <%=data.email%> because an account was created with this email address.
+        </mj-text>
+        
+        <mj-text align="center" font-size="12px" color="#9ca3af" line-height="18px">
+          <a href="#" class="footer-link">Privacy Policy</a> | 
+          <a href="#" class="footer-link">Terms of Service</a> | 
+          <a href="#" class="footer-link">Support Center</a>
+        </mj-text>
+        
+        <mj-text align="center" font-size="12px" color="#9ca3af" padding="15px 0 0">
+          Expense Tracker<br/>
+          Batala road<br/>
+         Amritsar
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    
+  </mj-body>
+</mjml>
