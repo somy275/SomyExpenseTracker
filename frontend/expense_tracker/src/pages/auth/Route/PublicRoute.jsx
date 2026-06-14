@@ -11,17 +11,16 @@ export const PublicRoute = ({ children }) => {
 
     // Fetch user once on mount, if not initialized
     useEffect(() => {
-        if (initialized) {
+        if (!initialized && !user) {
             dispatch(fetchUser());
+            return
         }
-    }, [initialized, dispatch]);
+    }, [initialized,user, dispatch]);
 
     // Redirect if user is authenticated
-    useEffect(() => {
-        if (user && initialized) {
+     if (user && initialized) {
             navigate("/");
         }
-    }, [user, initialized, navigate]);
-    return children
+    return user ?null: children
 
 }
