@@ -88,13 +88,16 @@ const authSlice = createSlice({
             .addCase(login.pending, (state) => {
                 state.loading = true;
                 state.error = null;
+                state.user=null
             })
             .addCase(login.fulfilled, (state, action) => {
                 state.user = action.payload;
                 state.loading = false;
+                state.initialized=true
             })
             .addCase(login.rejected, (state, action) => {
                 state.loading = false;
+                state.user=null,
                 state.error = action.payload;
             })
 
@@ -116,7 +119,7 @@ const authSlice = createSlice({
             .addCase(fetchUser.pending, (state) => {
                 state.loading = true;
                 state.error = null;
-                state.initialized = true;
+                state.initialized = false;
 
             })
             .addCase(fetchUser.fulfilled, (state, action) => {
@@ -128,7 +131,7 @@ const authSlice = createSlice({
                 state.user = null;
                 state.loading = false;
                 state.error = action.payload;
-                state.initialized = true;
+                state.initialized = false;
             })
             .addCase(logoutUser.fulfilled, (state) => {
                 state.user = null
